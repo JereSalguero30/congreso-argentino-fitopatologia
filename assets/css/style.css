@@ -174,6 +174,10 @@ h6 {
   max-height: 40px;
 }
 
+#header .logo-derecha {
+  padding-left: 1rem;
+}
+
 /**
 * Appointment Button
 */
@@ -1796,4 +1800,13 @@ section {
   padding-top: 10px;
   text-align: center;
   font-size: 13px;
+}
+
+#footer .footer-top #clients #container #container-container{
+  align-items: center;
+  justify-content: space-around;
+}
+
+.clients .contendor-aupician .contenedor-contenedor-auspician #pai{
+  padding-top: 4rem;
 }
