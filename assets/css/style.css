@@ -1810,3 +1810,10 @@ section {
 .clients .contendor-aupician .contenedor-contenedor-auspician #pai{
   padding-top: 4rem;
 }
+
+.contact #contenedor #contenedor-contenedor h4{
+  color: #777777 !important;
+} 
+.contact #contenedor #contenedor-contenedor h4:hover {
+  color: #3fc070;
+}
