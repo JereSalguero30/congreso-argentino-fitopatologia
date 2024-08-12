@@ -33,6 +33,8 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
+
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -1812,9 +1814,36 @@ section {
   padding-top: 4rem;
 }
 
+.clients .contendor-aupician .contenedor-contenedor-auspician .globalfresh {
+  padding-top: 4rem;
+  align-self: center;
+}
+
 .contact #contenedor #contenedor-contenedor h4{
   color: #777777 !important;
 } 
 .contact #contenedor #contenedor-contenedor h4:hover {
   color: #3fc070;
+}
+
+
+/* Inicialmente ocultamos el contenido */
+.content-section {
+  display: none;
+  overflow: hidden;
+}
+
+/* Estilo del botón de la flecha */
+.toggle-content {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.3s ease;
+}
+
+/* Rotación de la flecha al expandir */
+.toggle-content.expanded {
+  transform: rotate(180deg);
 }

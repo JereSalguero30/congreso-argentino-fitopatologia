@@ -25,9 +25,271 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" rel="stylesheet">
+  <style>
+    :root {
+      font-size: 16px; /* Base font-size para que 1rem = 16px */
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px; /* Ajusta la altura para que el tamaño del logo se ajuste */
+      width: 200px; /* Ajusta el ancho para que el tamaño del logo se ajuste */
+    }
+
+    .swiper-slide img {
+      width: 12.5rem; /* 200px / 16px per rem */
+      height: auto; /* Mantiene la proporción de la imagen */
+      object-fit: contain; /* Ajusta la imagen sin distorsionarla */
+    }
+
+    .swiper-container {
+      padding: 20px 0; /* Espacio arriba y abajo del carrusel */
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+      color: #000; /* Color de las flechas */
+      background-color: rgba(255, 255, 255, 0.8); /* Fondo de las flechas */
+      border-radius: 50%; /* Redondeo de las flechas */
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .swiper-button-next::after, .swiper-button-prev::after {
+      font-size: 20px;
+    }
+
+    .logo {
+      width: 12.5rem; /* 200px en rem */
+      height: 8rem; /* Ajusta la altura para mantener una proporción adecuada */
+      object-fit: contain; /* Mantiene la proporción de la imagen sin distorsionarla */
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .container-fluid {
+      padding: 0 15px; /* Espacio lateral en el contenedor */
+    }
+    .row {
+      justify-content: center; /* Centra las columnas en la fila */
+    }
+    .col-6, .col-md-4, .col-lg-2 {
+      display: flex;
+      justify-content: center; /* Centra los logos dentro de cada columna */
+    }
+    /* Añadir un margen inferior para cada logo para separar los logos en la misma fila */
+    .col-6 img, .col-md-4 img, .col-lg-2 img {
+      margin-bottom: 1rem;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+      color: #3fc070; /* Color de las flechas */
+    }
+    .swiper-pagination-bullet {
+      background: #3fc070; /* Color de los bullets de paginación */
+    }
+    .swiper-pagination-bullet-active {
+      background: #2d8b57; /* Color de los bullets activos */
+    }
+    .portfolio {
+      padding: 40px 0;
+    }
+    .section-title h2 {
+      color: #3fc070; /* Color verde para los detalles */
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .portfolio-item img:hover {
+      transform: scale(1.05);
+    }
+
+    .section-title {
+      margin-bottom: 40px; /* Ajusta la separación entre el título y el contenedor del PDF */
+    }
+    
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none; /* Elimina el borde del iframe */
+      display: inline-block; /* Asegura que el iframe se comporte como un bloque en línea para el desplazamiento horizontal */
+    }
+
+    .header .btn {
+      margin-right: 10px; /* Ajusta el margen según sea necesario */
+    }
+
+    #header {
+  padding: 5px 0; /* Reduce el padding vertical para que el encabezado sea más bajo */
+  font-size: 0.9rem; /* Ajusta el tamaño del texto dentro del encabezado */
+  background-color: #ffffff; /* Ajusta el color de fondo si es necesario */
+  border-bottom: 1px solid #e0e0e0; /* Añade una línea inferior para separación */
+}
+
+/* Ajusta el tamaño de los elementos dentro del encabezado */
+#header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px; /* Ajusta la altura del contenedor del encabezado */
+}
+
+/* Reduce el tamaño del logo */
+#header .logo img {
+  max-height: 40px; /* Ajusta la altura máxima del logo */
+  height: auto; /* Mantiene la relación de aspecto */
+}
+
+/* Ajusta el tamaño del botón del menú desplegable */
+#header .btn {
+  font-size: 0.8rem; /* Ajusta el tamaño del texto en el botón */
+  padding: 6px 10px; /* Reduce el padding del botón */
+}
+
+/* Ajusta el tamaño del menú desplegable */
+#header .dropdown-menu {
+  font-size: 0.8rem; /* Ajusta el tamaño del texto en el menú desplegable */
+}
+
+/* Ajusta el tamaño del icono de la hamburguesa en dispositivos móviles */
+#header .mobile-nav-toggle {
+  font-size: 1rem; /* Ajusta el tamaño del icono */
+}
+
+/* Alinea y espacia correctamente las imágenes del logo */
+#header .logo {
+  display: flex;
+  align-items: center;
+}
+
+#header .logo img {
+  height: 40px; /* Ajusta la altura de las imágenes del logo */
+  margin-right: 10px; /* Ajusta el espaciado entre las imágenes */
+}
+
+/* Estilo opcional para el logo a la derecha */
+#header .logo .logo-derecha {
+  margin-left: 10px; /* Espaciado adicional para la imagen de la derecha */
+}
+
+/* Estilos para la visualización móvil */
+@media (max-width: 991px) {
+  #header .navbar {
+    display: none; /* Oculta la barra de navegación en pantallas pequeñas */
+  }
+
+  #header .mobile-nav-toggle {
+    display: inline-block; /* Muestra el botón de navegación móvil */
+  }
+  
+  /* Asegúrate de que el contenedor del logo y el menú desplegable se ajusten bien en pantallas pequeñas */
+  #header .container {
+    flex-direction: column;
+    height: auto; /* Ajusta la altura del contenedor para pantallas pequeñas */
+  }
+}
+
+.section-title {
+  text-align: center; /* Centra el texto */
+  margin: 40px 0; /* Espacio arriba y abajo del título */
+}
+
+/* Estilo para el título de la sección h3 */
+.section-title h3 {
+  font-size: 2rem; /* Tamaño del texto del título */
+  font-weight: 600; /* Grosor del texto del título */
+  color: #333; /* Color del texto del título */
+  margin: 0; /* Elimina el margen por defecto */
+  padding: 0; /* Elimina el padding por defecto */
+}
+
+#portfolio .section-title {
+    text-align: center; /* Centra el texto horizontalmente */
+    max-width: 800px; /* Limita el ancho del contenido */
+    margin: 0 auto; /* Centra el contenedor dentro de su contenedor padre */
+}
+
+#portfolio .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-item {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Opcional: Ajusta el tiempo de la animación según sea necesario */
+.animate-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.animate-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.animate-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.animate-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.pdf-info .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Asegura que el texto dentro de la sección esté centrado */
+}
+
+#pdf-viewer-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0; /* Asegura que no haya padding que pueda afectar el centramiento */
+  margin-top: 20px; /* Ajusta el margen según sea necesario */
+}
+
+#pdf-viewer-container iframe {
+  width: 100%;
+  max-width: 800px; /* Ajusta el ancho máximo según sea necesario */
+  height: 600px; /* Ajusta la altura según sea necesario */
+  border: none; /* Elimina el borde del iframe */
+  display: block; /* Asegura que el iframe se comporte como un bloque para el centramiento */
+}
+  </style>
+
 
   <!-- =======================================================
   * Template Name: Medicio
@@ -46,27 +308,28 @@
       <div class="align-items-center d-none d-md-flex">
         <i class="bi bi-clock"></i> Septiembre 18 - 19 - 20
       </div>
+      <div class=" align-items-center d-none d-md-flex">
+        <i class="bi bi-envelope"></i> Contactanos cafpatagonia2024@gmail.com
+      </div>
       <div class="d-flex align-items-center">
         <a href="https://www.instagram.com/6tocafpatagonia?igsh=eWozNHJpenE0dXA1"><i class="bx bxl-instagram"></i>  </a> Instagram
       </div>
-      <div class="d-flex align-items-center">
-        <i class="bi bi-envelope"></i> Contactanos cafpatagonia2024@gmail.com
-      </div>
+      
     </div>
   </div>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-
-      <a href="https://aafitopatologos.com.ar/ " class="logo me-auto"><img src="assets/img/LOGO_AsociaciónAF.png" alt=""><img class="logo-derecha" src="assets/img/LOGO_Comisión_Organizadora.png" alt=""> </a>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
-
+      <a href="https://aafitopatologos.com.ar/" class="logo me-auto">
+        <img src="assets/img/LOGO_AsociaciónAF.png" alt="">
+        <img class="logo-derecha" src="assets/img/LOGO_Comisión_Organizadora.png" alt="">
+      </a>
+  
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto " href="#hero">Inicio</a></li>
-          <li><a class="nav-link scrollto " href="https://drive.google.com/drive/folders/1StmWlYmMkwbMHJ46145_e75gpZMeO6Yv">Circulares</a></li>
+          <li><a class="nav-link scrollto" href="#hero">Inicio</a></li>
+          <li><a class="nav-link scrollto" href="https://drive.google.com/drive/folders/1StmWlYmMkwbMHJ46145_e75gpZMeO6Yv">Circulares</a></li>
           <li><a class="nav-link scrollto" href="#about">Acerca de</a></li>
           <li><a class="nav-link scrollto" href="#services">Charlas</a></li>
           <li><a class="nav-link scrollto" href="#doctors">Expositores</a></li>
@@ -75,20 +338,30 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
-      
-      <div class="dropdown">
+  
+      <div class="dropdown me-2">
         <a class="btn btn-secondary dropdown-toggle appointment-btn scrollto" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Inscripciones
         </a>
-        <ul class="dropdown-menu ">
-          <li><a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSclAnEAbd_FlQh0M9oyguPWOgH-N9SAM8ZZkMuAp1Q6hre2ig/viewform ">Formulario de Inscripcion</a></li>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSclAnEAbd_FlQh0M9oyguPWOgH-N9SAM8ZZkMuAp1Q6hre2ig/viewform">Formulario de Inscripción</a></li>
           <li><a class="dropdown-item" href="https://docs.google.com/document/d/1rG1shYhO6aWyaqWXf2Nk7SX_GvPFeVdnl4uvgkhgM3g/edit?usp=drive_link">Costos</a></li>
           <li><a class="dropdown-item" href="https://docs.google.com/document/d/15huhQh5Gt4KP5TkzF9XhCI5kKaG8AeUwttoO2iDmpA0/edit?usp=drive_link">Presentaciones de Trabajos</a></li>
         </ul>
       </div>
+  
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle courses-btn scrollto" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Cursos Precongreso
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="https://drive.google.com/file/d/1OdV6F80YLnHTcxbvQL0uEDAkATvhGmeD/view?usp=sharing">Info de los Cursos</a></li>
+          <li><a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSe-dRsyGFvlxJV90SPhVXa0YFj_3L0saR9iOE6gr6lyMAdZYQ/viewform">Formulario de Inscripción</a></li>
+        </ul>
+      </div>
     </div>
   </header><!-- End Header -->
+  
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
@@ -192,16 +465,16 @@
           <div class="col-lg-6" data-aos="fade-right">
             <img src="assets/img/LOGO_6toCAF_LetraBlanca.png" class="img-fluid" alt="">
          
-            <img src="assets/img/LOGO_AsociaciónAF.png" class="img-fluid" alt="">
+           <a href="https://aafitopatologos.com.ar/"> <img src="assets/img/LOGO_AsociaciónAF.png" class="img-fluid" alt=""></a>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>Tenemos el agrado de darles la bienvenida al “VI Congreso Argentino de Fitopatología”. </h3>
             <p class="fst-italic">
-              El evento se realizará los días 18, 19 y 20 de septiembre de 2024 en la ciudad de Cipolletti, Patagonia Argentina.
+              El evento se realizará los días 18, 19 y 20 de septiembre de 2024 en la ciudad de Cipolletti: Rio Negro, Patagonia Argentina.
             </p>
             <ul>
               <li><i class="bi bi-check-circle"></i> La modalidad del evento será presencial.</li>
-              <li><i class="bi bi-check-circle"></i> Se llevarán a cabo conferencias plenarias, mesas redondas, exposición de posters y gira técnica.</li>
+              <li><i class="bi bi-check-circle"></i> Se llevarán a cabo conferencias plenarias, mesas redondas y exposición de posters.</li>
               <li><i class="bi bi-check-circle"></i> Con la participación de referentes extranjeros y nacionales de reconocida y amplia trayectoria en el estudio de las enfermedades de las plantas, interacciones planta – patógeno, control de enfermedades.</li>
             </ul>
             <p>
@@ -222,7 +495,7 @@
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
             <div class="count-box">
               <i class="fas fa-user"></i>
-              <span data-purecounter-start="0" data-purecounter-end="27" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1" class="purecounter"></span>
 
               <p><strong>Expositores</strong> internacionales y nacionales</p>
               
@@ -241,7 +514,7 @@
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
             <div class="count-box">
               <i class="fas fa-bullhorn"></i>
-              <span data-purecounter-start="0" data-purecounter-end="39" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="45" data-purecounter-duration="1" class="purecounter"></span>
               <p><strong>Exposiciones y charlas</strong> acerca de cada una de las tematicas abordadas en el congreso.</p>
               
             </div>
@@ -251,7 +524,7 @@
             <div class="count-box">
               <i class="fas fa-hourglass"></i>
               <span data-purecounter-start="0" data-purecounter-end="+30" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Horas </strong> que vamos a compartir, informandonos y compratiendo acerca de las tematicas.</p>
+              <p><strong>Horas </strong> que vamos a compartir, informandonos y compartiendo acerca de las tematicas.</p>
               
             </div>
           </div>
@@ -263,50 +536,209 @@
 
     <!--Auspicio-->
     <section id="clients auspician" class="clients ">
-          
-      <div class="section-title">
-          <h2>Nos Auspician</h2>
-      </div>
-  
-          <div class="container-fluid contendor-aupician" data-aos="fade-up">
-    
-            <div class="row gy-4 contenedor-contenedor-auspician">
-              
-              <div  class="col-sm col-6  client-logo">
-                <a href="https://www.pai-argentina.com/">
-                  <img src="assets/img/PAI_300px-removebg-preview.png" class="img-fluid" alt="">
-                </a>
-              </div><!-- End Client Item -->
 
-              <div id="pai" class="col-sm col-6  client-logo">
-                <a href="https://www.agrofresh.com/es/">
-                  <img src="assets/img/AgroFresh_300px.jpg" class="img-fluid" alt="">
-                </a>
-              </div><!-- End Client Item -->
-    
-              <div id="pai" class="col-sm col-6  client-logo">
-                <a href="https://www.cervi.com.ar/">
-                  <img src="assets/img/Cervi_300px.jpg" class="img-fluid" alt="">
-                </a>
-              </div><!-- End Client Item -->
-    
-              <div id="pai" class="col-sm col-6  client-logo">
-                <a href="https://www.basf.com/ar/es.html">
-                  <img src="assets/img/BASF_300px.jpg" class="img-fluid" alt="">
-                </a>
-              </div><!-- End Client Item -->
-
-              <div id="pai" class="col-sm col-6  client-logo">
-                <a href="https://grupoprima.com/">
-                  <img src="assets/img/GrupoPrima_300px.jpg" class="img-fluid" alt="">
-                </a>
-              </div><!-- End Client Item -->
-    
-            </div>
-    
+          <div class="section-title">
+            <h2>Nuestros Sponsors</h2>
           </div>
     
-        </section><!-- End Clients Section -->
+      <div class="container-fluid contendor-aupician" data-aos="fade-up">
+    
+        <div class="row gy-4 contenedor-contenedor-auspician"></div>
+
+              <div  class="text-center">
+                <a href="http://www.globalfresh.com.ar/">
+                  <img src="assets/img/GlobalFresh_300px.jpg" class="img-fluid" alt="">
+                </a>
+              </div><!-- End Client Item -->
+
+      </div>
+      
+</section><!-- End Clients Section -->
+
+<section id="clients" class="clients section">
+  <div class="section-title">
+    <h2>Nos Auspician</h2>
+  </div>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="swiper init-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="https://www.pai-argentina.com/" target="_blank">
+            <img src="assets/img/PAI_300px-removebg-preview.png" class="img-fluid" alt="AgriStar">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://www.agrofresh.com/es/" target="_blank">
+            <img src="assets/img/AgroFresh_300px.jpg" class="img-fluid" alt="AgroFresh">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://www.cervi.com.ar/" target="_blank">
+            <img src="assets/img/Cervi_300px.jpg" class="img-fluid" alt="CITAAC">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://www.basf.com/ar/es" target="_blank">
+            <img src="assets/img/BASF_300px.jpg" class="img-fluid" alt="Decco">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://grupoprima.com/" target="_blank">
+            <img src="assets/img/GrupoPrima_300px.jpg" class="img-fluid" alt="FACA">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://agristar.com.ar/" target="_blank">
+            <img src="assets/img/AgriStar_300px.jpg" class="img-fluid" alt="GlobalFresh">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://www.deccopostharvest.com/es/quienes-somos/historia/" target="_blank">
+            <img src="assets/img/Decco_300px.jpg" class="img-fluid" alt="Protegium">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://www.kleppe.com.ar/" target="_blank">
+            <img src="assets/img/Kleppe_300px.jpg" class="img-fluid" alt="Protegium">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://protergium.com/es/" target="_blank">
+            <img src="assets/img/Protegium_300px.jpg" class="img-fluid" alt="Protegium">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://stoller.com.ar/" target="_blank">
+            <img src="assets/img/STOLLER_300px.jpg" class="img-fluid" alt="Protegium">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://rizobacter.com.ar/es" target="_blank">
+            <img src="assets/img/Rizobacter_300px.jpg" class="img-fluid" alt="Protegium">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://www.syngenta.com.ar/?gclid=Cj0KCQjw5ea1BhC6ARIsAEOG5pwddMyhm7vuEANkJzC4dNVwp2SFsYEWkPOm20e13_PkRMjvR1Lfnd8aAqNjEALw_wcB" target="_blank">
+            <img src="assets/img/Syngenta_300px.jpg" class="img-fluid" alt="Protegium">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://www.tresases.com.ar//" target="_blank">
+            <img src="assets/img/TRES-ASES_300px.jpg" class="img-fluid" alt="Protegium">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://wassington.com.ar/product-category/agro/" target="_blank">
+            <img src="assets/img/WASSINGTON_300px.jpg" class="img-fluid" alt="Protegium">
+          </a>
+        </div>
+      </div>
+      <!-- Agrega los botones de navegación aquí -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</section>
+
+<section id="clients" class="clients section">
+  <div class="section-title">
+    <h2>Colaboran</h2>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-2 text-center">
+        <a href="https://www.andoreciclaje.com//" target="_blank">
+          <img src="assets/img/Ando_300px.jpg" class="logo img-fluid" alt="Ando">
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 text-center">
+        <a href="https://www.agro.bayer.com.ar//" target="_blank">
+          <img src="assets/img/Bayer_300px.jpg" class="logo img-fluid" alt="Bayer">
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 text-center">
+        <a href="https://www.cpia.org.ar/" target="_blank">
+          <img src="assets/img/CPIA_300px.jpg" class="logo img-fluid" alt="CPIA">
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 text-center">
+        <a href="https://bodegahcanale.com/" target="_blank">
+          <img src="assets/img/Humberto_Canale_300px.jpg" class="logo img-fluid" alt="Humberto Canale">
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 text-center">
+        <a href="https://tienda.familiaschroeder.com//" target="_blank">
+          <img src="assets/img/Schroeder_300px.jpg" class="logo img-fluid" alt="Schroeder">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!--Auspicio-->
+    <section id="clients auspician" class="clients ">
+
+      <div class="section-title">
+        <h2>Con el Apoyo de:</h2>
+      </div>
+
+  <div class="container-fluid contendor-aupician" data-aos="fade-up">
+
+    <div class="row gy-4 contenedor-contenedor-auspician"></div>
+
+          <div  class="text-center">
+            <a href="https://fundacionwilliams.org.ar/">
+              <img src="assets/img/FundacionWilliams_300px.jpg" class="img-fluid" alt="">
+            </a>
+          </div><!-- End Client Item -->
+
+  </div>
+  
+</section><!-- End Clients Section -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const swiper = new Swiper('.init-swiper', {
+      loop: true,
+      speed: 600,
+      autoplay: {
+        delay: 2000, // Intervalo de 2 segundos para el cambio automático
+      },
+      slidesPerView: 3,
+      spaceBetween: 20,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+        480: {
+          slidesPerView: 3,
+          spaceBetween: 60,
+        },
+        640: {
+          slidesPerView: 4,
+          spaceBetween: 80,
+        },
+        992: {
+          slidesPerView: 6,
+          spaceBetween: 120,
+        },
+      },
+    });
+  });
+</script>
 
     <!-- ======= Features Section ======= -->
     <section id="features" class="features">
@@ -376,7 +808,7 @@
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon"><i class="fa-solid fa-shield-virus"></i></div>
-            <h4 class="title">Mecanismos de generacion de resistencias a funcgicidas.</h4>
+            <h4 class="title">Mecanismos de generacion de resistencias a fungicidas.</h4>
             <p class="description"><strong>Marcelo Carmona</strong>, FAUBA - Argentina.</p>
           </div>
         </div>
@@ -579,6 +1011,21 @@
             </div>
           </div>
 
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="assets/img/Rodrigo Astete.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/rodrigo-astete-rocha-1ab354265/"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Astete Rodrigo</h4>
+                <span> Especialista Internacional IICA </span>
+              </div>
+            </div>
+          </div>
+
           <div class="section-title">
             <h3>Nacionales</h3>
           </div>
@@ -601,14 +1048,14 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
-                <img src="assets/img/Nacionales/Diana Marini.JPG" class="img-fluid" alt="">
+                <img src="assets/img/Nacionales/Diana Marini.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="https://www.linkedin.com/in/marini-diana-a0828729/?originalSubdomain=ar 
                   "><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>Daiana Marini</h4>
+                <h4>Diana Marini</h4>
                 <span>INTA, Junín, Argentina</span>
               </div>
             </div>
@@ -869,6 +1316,51 @@
             </div>
           </div>
 
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="400">
+              <div class="member-img">
+                <img src="assets/img/Asciutto Karina.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/karina-asciutto-61439938/"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Asciutto Karina</h4>
+                <span> Dirección de Agroquímicos y Biológicos en SENASA</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="400">
+              <div class="member-img">
+                <img src="assets/img/Diego Quiroga.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/diego-quiroga-a85203148/"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Quiroga Diego</h4>
+                <span> Senasa, Argentina</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="400">
+              <div class="member-img">
+                <img src="assets/img/perfil-hombre-vacio.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/diego-quiroga-a85203148/"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Rapela Roberto</h4>
+                <span> Cámara Argentina de Bioinsumos (CABIO)</span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -900,8 +1392,6 @@
       </div>
     </section><!-- End Gallery Section -->
 
-
-
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
@@ -917,7 +1407,74 @@
         <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3690.503441178947!2d-68.00017820808758!3d-38.9392633764139!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a3102730b3145%3A0xc608039130510159!2sComplejo%20Cultural%20Cipolletti!5e0!3m2!1ses-419!2sar!4v1713988824665!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
+
+      <section id="portfolio" class="portfolio section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Info Turismo</h2>
+          <p>Te brindamos un poco de info útil para que cuentes en tu estadía y puedas disfrutar de tu visita.</p>
+        </div><!-- End Section Title -->
       
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-item animate-item">
+                <a href="assets/img/WhatsApp Image 2024-08-09 at 13.44.48 (1).jpeg" class="glightbox">
+                  <img src="assets/img/WhatsApp Image 2024-08-09 at 13.44.48 (1).jpeg" alt="">
+                </a>
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-item animate-item">
+                <a href="assets/img/WhatsApp Image 2024-08-09 at 13.44.49 (1).jpeg" class="glightbox">
+                  <img src="assets/img/WhatsApp Image 2024-08-09 at 13.44.49 (1).jpeg" alt="">
+                </a>
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-item animate-item">
+                <a href="assets/img/WhatsApp Image 2024-08-09 at 13.44.49 (3).jpeg" class="glightbox">
+                  <img src="assets/img/WhatsApp Image 2024-08-09 at 13.44.49 (3).jpeg" alt="">
+                </a>
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-item animate-item">
+                <a href="assets/img/WhatsApp Image 2024-08-09 at 13.44.50.jpeg" class="glightbox">
+                  <img src="assets/img/WhatsApp Image 2024-08-09 at 13.44.50.jpeg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section><!-- /Portfolio Section -->
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/glightbox@3.0.8/dist/js/glightbox.min.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const lightbox = GLightbox({
+            selector: '.glightbox'
+          });
+        });
+      </script>
+
+
+<section id="portfolio" class="portfolio section">
+    <section id="pdf-info" class="pdf-info section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Información Turística Adicional</h2>
+        <p>Consulta nuestro documento PDF para más detalles turísticos.</p>
+        <div id="pdf-viewer-container">
+          <iframe src="assets/pdf/info-turistica.pdf" type="application/pdf"></iframe>
+        </div>
+      </div>
+    </section>
+  </section>    
+
       <div class="container">
 
         <div class="row mt-5">
@@ -988,16 +1545,20 @@
 
         <div id="container" class="container-fluid" data-aos="fade-up">
   
-          <div id="container-container" class="row gy-5 ">
+          <div id="container-container" class="row gy-5 mb-3">
 
             <div class="section-title">
               <h2 >Organizan</h2>
             </div>
   
-            <div class="col-xl-1 client-logo">
-              <img src="assets/img/Organizadores_1_UNCo.png" class="img-fluid" alt="">
+            <div class="col-xl-2 client-logo">
+              <img src="assets/img/FACA.png" class="img-fluid" alt="">
             </div><!-- End Client Item -->
   
+            <div class="col-xl-2 client-logo">
+              <img src="assets/img/CITAAC.png" class="img-fluid" alt="">
+            </div><!-- End Client Item -->
+
             <div class="col-xl-1 client-logo">
               <img src="assets/img/Organizadores_2_UNRN.png" class="img-fluid" alt="">
             </div><!-- End Client Item -->
@@ -1007,12 +1568,36 @@
             </div><!-- End Client Item -->
   
             <div class="col-xl-1 client-logo">
+              <img src="assets/img/Organizadores_5_SENASA.png" class="img-fluid" alt="">
+            </div><!-- End Client Item -->
+            
+            <div class="col-xl-2 client-logo">
+              <img src="assets/img/LASAF-removebg-preview.png" class="img-fluid" alt="">
+            </div><!-- End Client Item -->
+
+            <div class="col-xl-1 client-logo">
+              <img src="assets/img/AAF.png" class="img-fluid" alt="">
+            </div><!-- End Client Item -->
+
+            
+  
+          </div>
+
+          <div id="container-container" class="row gy-4 ">
+
+            <div class="section-title pt-5">
+              <h2>Avalan</h2>
+            </div>
+  
+            <div class="col-xl-1 client-logo">
+              <img src="assets/img/unc.png" class="img-fluid" alt="">
+            </div><!-- End Client Item -->
+  
+  
+            <div class="col-xl-1 client-logo">
               <img src="assets/img/Organizadores_6_RN.png" class="img-fluid" alt="">
             </div><!-- End Client Item -->
             
-            <div class="col-xl-1 client-logo">
-              <img src="assets/img/Organizadores_5_SENASA.png" class="img-fluid" alt="">
-            </div><!-- End Client Item -->
 
             <div class="col-xl-1 client-logo">
               <img src="assets/img/Organizadores_4_CONICET.png" class="img-fluid" alt="">
@@ -1066,6 +1651,19 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script>
+    const toggleButton = document.querySelector('.toggle-content');
+    const contentSection = document.querySelector('.content-section');
+
+    // Añadimos un evento de click al botón
+    toggleButton.addEventListener('click', function () {
+        // Alternamos la visibilidad del contenido
+        contentSection.style.display = contentSection.style.display === 'none' ? 'block' : 'none';
+
+        // Alternamos la clase expanded para la rotación de la flecha
+        toggleButton.classList.toggle('expanded');
+    });
+  </script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
